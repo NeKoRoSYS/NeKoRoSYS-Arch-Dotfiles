@@ -33,6 +33,17 @@ else
     exit 1
 fi
 
+if [ -f "flatpak.txt" ]; then
+    echo -e "${BLUE}Installing packages from flatpak.txt using flatpak...${NC}"
+    flatpak list --app --columns=application > flatpaks.txt
+else
+    echo -e "${RED}Error: flatpak.txt not found!${NC}"
+    exit 1
+fi
+
+
+
+
 # 4. Install Python Dependencies for Pywal
 # Required by README.md for haishoku and colorthief
 echo -e "${BLUE}Installing Pywal backend dependencies...${NC}"
@@ -56,3 +67,4 @@ chmod +x ~/.config/hypr/scripts/*.sh 2>/dev/null
 chmod +x ~/.config/hypr/scripts/wallpapers/*.sh 2>/dev/null
 
 echo -e "${GREEN}Installation complete!${NC}"
+
