@@ -42,9 +42,6 @@ else
     exit 1
 fi
 
-
-
-
 # 4. Install Python Dependencies for Pywal
 # Required by README.md for haishoku and colorthief
 echo -e "${BLUE}Installing Pywal backend dependencies...${NC}"
@@ -59,6 +56,37 @@ mkdir -p ~/.config
 echo -e "${BLUE}Deploying configuration files and wallpapers...${NC}"
 cp -rv .config ~/
 
+# 1. Ask for the new username
+read -p "Enter the new username to use in the path: " NEW_USER
+
+# Define the search and replacement strings
+SEARCH="/home/nekorosys/"
+REPLACE="/home/$NEW_USER/"
+
+echo "Searching for $SEARCH and replacing with $REPLACE..."
+echo "----------------------------------------------------"
+
+# 2. Find files and ask for confirmation on each match
+find "$HOME/.config" -type f -print0 | while IFS= read -r -d '' file; do
+    # Check if the file contains the string before bothering the user
+    if grep -q "$SEARCH" "$file"; then
+        echo ""
+        echo "Found match in: $file"
+        read -p "Apply replacement in this file? (y/n): " choice
+        
+        if [[ "$choice" == "y" || "$choice" == "Y" ]]; then
+            # We use | as a sed delimiter to handle the slashes in the path
+            sed -i "s|$SEARCH|$REPLACE|g" "$file"
+            echo "✅ Updated: $file"
+        else
+            echo "⏭️  Skipped: $file"
+        fi
+    fi
+done
+
+echo "----------------------------------------------------"
+echo "Process complete."
+
 # 7. Set executable permissions for scripts
 # Ensures wallpaper and lock scripts can run
 echo -e "${BLUE}Setting script permissions...${NC}"
@@ -67,6 +95,7 @@ chmod +x ~/.config/hypr/scripts/wallpapers/*.sh 2>/dev/null
 echo -e "${BLUE}Enabling waybar...${NC}"
 sudo systemctl enable ~/.config/systemd/user/waybar.service
 echo -e "${GREEN}Installation complete!${NC}"
+
 
 
 
