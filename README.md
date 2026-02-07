@@ -29,5 +29,8 @@ Based on [mkhmtolzhas' rice](https://github.com/mkhmtolzhas/Invincible-Dots).
 ## Dependencies
 - Auto-pause animated wallpapers via [mpvpaper-stop](https://github.com/pvtoari/mpvpaper-stop) (dependencies: cmake, cjson)
   - Used at `set-wallpaper.sh` and `check-video.sh` in `~/.config/hypr/scripts/wallpapers/` to save CPU/RAM usage.
-- `hyprland` uses `hyprdile` and `hyprlock`, install them via `sudo pacman -S hyprlock hypridle`.
-- The `waybar` was set up to use kitty, Mozilla Firefox, and dolphin. You can change this if you want at `~/.config/waybar/config.jsonc`.
+- `hyprland` uses `hyprdile` and `hyprlock`.
+  - Install them via `sudo pacman -S hyprlock hypridle`. (Automatically provided by `pkglist.txt` if you used the `install.sh` bash file)
+- The `waybar` was set up to use `kitty`, `Mozilla Firefox`, and `dolphin`. You can change this if you want at `~/.config/waybar/config.jsonc`.
+- The screenshot and clipboard features need `grim`, `wl-clipboard`, and `cliphist` to run.
+  - Install them via `sudo pacman -S grim wl-clipboard cliphist`. (Automatically provided by `pkglist.txt` if you used the `install.sh` bash file)
