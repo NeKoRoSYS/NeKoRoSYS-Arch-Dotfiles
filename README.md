@@ -56,4 +56,4 @@ Mostly just personal notes in case I switch over to another PC.
   - `sudo grub-mkconfig -o /boot/grub/grub.cfg`
 - Modify `/etc/mkinitcpio.conf` (`MODULES` for GPU and `HOOKS` for `plymouth` after `base udev`)
   - `sudo mkinitcpio -P`
-- Use `plymouth` and `greetd` `nwg-hello)`
+- Use `plymouth` and `greetd` (`nwg-hello`)
