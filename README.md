@@ -14,7 +14,7 @@ Based on [mkhmtolzhas' rice](https://github.com/mkhmtolzhas/Invincible-Dots).
   - `start-dashboard.sh` creates a grid layout for a 1920x1080 display, it may not work the same for you if your monitor has a different resolution.
 
 
-## Other Dependencies (Read them to install properly)
+## Dependencies
 - Auto-stop animated wallpapers https://github.com/pvtoari/mpvpaper-stop (dependencies: cmake, cjson)
   - Used at `set-wallpaper.sh` and `check-video.sh` in `~/.config/hypr/scripts/wallpapers/` to save CPU/RAM usage.
 - The waybar was set up to use kitty, Mozilla Firefox, and dolphin. You can change this if you want at `~/.config/waybar/config.jsonc`.
