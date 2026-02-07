@@ -52,7 +52,7 @@ Based on [mkhmtolzhas' rice](https://github.com/mkhmtolzhas/Invincible-Dots).
 
 ## TODO
 - Improve Hyprlock UI
-- Add notifications for specific actions
+- Pull waybar from mkhmtolzha's newer dotfiles
 <br>
 
 ## Optional
