@@ -1,6 +1,7 @@
 # NeKoRoSYS's Arch Dotfiles
 Based on [mkhmtolzhas' rice](https://github.com/mkhmtolzhas/Invincible-Dots).
 
+
 ## Features
 - One-tap installer script
   - use `git clone https://github.com/NeKoRoSYS/NeKoRoSYS-Arch-Dotfiles`
@@ -14,6 +15,7 @@ Based on [mkhmtolzhas' rice](https://github.com/mkhmtolzhas/Invincible-Dots).
   - Sleek and straightforward design
   - Built to feel like a windows taskbar
     - Choose to start an app, change workspaces, or select power options like Lock, Sleep, Shut Down, Reboot, and Sign Out
+
 
 ## Notes
 - The installer assumes you already installed `base-devel`, `git`, `yay`, `flatpak`.
