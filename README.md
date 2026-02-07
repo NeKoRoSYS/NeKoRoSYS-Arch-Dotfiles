@@ -34,3 +34,7 @@ Based on [mkhmtolzhas' rice](https://github.com/mkhmtolzhas/Invincible-Dots).
 - The `waybar` was set up to use `kitty`, `Mozilla Firefox`, and `dolphin`. You can change this if you want at `~/.config/waybar/config.jsonc`.
 - The screenshot and clipboard features need `grim`, `wl-clipboard`, and `cliphist` to run.
   - Install them via `sudo pacman -S grim wl-clipboard cliphist`. (Automatically provided by `pkglist.txt` if you used the `install.sh` bash file)
+
+
+## TODO
+- Improve Hyprlock UI
