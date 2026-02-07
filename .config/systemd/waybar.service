@@ -1,0 +1,12 @@
+[Unit]
+Description=Waybar
+After=hyprland-session.target
+Wants=hyprland-session.target
+
+[Service]
+ExecStart=/usr/bin/waybar
+Restart=on-failure
+RestartSec=1
+
+[Install]
+WantedBy=hyprland-session.target
