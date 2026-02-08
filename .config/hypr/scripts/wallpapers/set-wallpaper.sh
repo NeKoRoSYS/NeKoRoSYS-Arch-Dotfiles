@@ -12,16 +12,16 @@ SOCKET="/tmp/mpvsocket"
 FILE_LIST=$(find "$WALL_DIR" -type f \( -iname "*.png" -o -iname "*.jpg" -o -iname "*.jpeg" -o -iname "*.mp4" -o -iname "*.mkv" -o -iname "*.webm" \) -printf "%f\n")
 
 # Selection menu
-SELECTED_FILE=$(echo "$FILE_LIST" | wofi --dmenu --prompt "Select background")
+SELECTED_FILE=$(echo "$FILE_LIST" | wofi --dmenu --prompt "Select background or paste a link")
 [ -z "$SELECTED_FILE" ] && exit 0
 
 if [[ "$SELECTED_FILE" =~ ^http ]]; then
     CLEAN_NAME=$(echo "${SELECTED_FILE##*/}" | cut -d? -f1)
     EXT="${CLEAN_NAME##*.}"
-
+    
     case "$(echo "$EXT" | tr '[:upper:]' '[:lower:]')" in
-        png|jpg|jpeg)
-            echo "Valid image URL detected. Downloading..."
+        png|jpg|jpeg|mp4|mkv|webm)
+            echo "Valid media URL detected. Downloading..."
             DEST="$WALL_DIR/$CLEAN_NAME"
             if curl -L -o "$DEST" "$SELECTED_FILE"; then
                 SELECTED_FILE="$CLEAN_NAME"
@@ -31,7 +31,7 @@ if [[ "$SELECTED_FILE" =~ ^http ]]; then
             fi
             ;;
         *)
-            echo "Error: URL does not point to a valid image extension (png, jpg, jpeg)."
+            echo "Error: URL does not point to a valid media extension (png, jpg, jpeg, mp4, mkv, webm)."
             exit 1
             ;;
     esac
