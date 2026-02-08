@@ -118,3 +118,40 @@ Mostly personal notes just in case I switch over to another PC.
 - Modify `/etc/mkinitcpio.conf` (`MODULES` for GPU and `HOOKS` for `plymouth` after `base udev`)
   - `sudo mkinitcpio -P`
 - Use `plymouth` and `greetd` (`nwg-hello`)
+- Use `alsa-utils` and `noise-suppression-for-voice`
+  - `wpctl status`
+  - `alsamixer`
+  - `sudo alsactl store`
+  - `nano ~/.config/pipewire/pipewire.conf.d/99-input-denoising.conf`
+    ```json
+    context.modules = [
+{   name = libpipewire-module-filter-chain
+    args = {
+        node.description = "Noise Canceling Source"
+        media.name       = "Noise Canceling Source"
+        filter.graph = {
+            nodes = [
+                {
+                    type   = ladspa
+                    name   = rnnoise
+                    plugin = /usr/lib/ladspa/librnnoise_ladspa.so
+                    label  = noise_suppressor_mono
+                    control = {
+                        "VAD Threshold (%)" = 50.0
+                    }
+                }
+            ]
+        }
+        capture.props = {
+            node.name   = "capture.rnnoise_source"
+            node.passive = true
+            audio.rate   = 48000
+        }
+        playback.props = {
+            node.name   = "rnnoise_source"
+            media.class = Audio/Source
+            audio.rate   = 48000
+        }
+    }
+}
+]```
