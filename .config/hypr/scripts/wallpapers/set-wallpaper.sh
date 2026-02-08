@@ -15,6 +15,28 @@ FILE_LIST=$(find "$WALL_DIR" -type f \( -iname "*.png" -o -iname "*.jpg" -o -ina
 SELECTED_FILE=$(echo "$FILE_LIST" | wofi --dmenu --prompt "Select background")
 [ -z "$SELECTED_FILE" ] && exit 0
 
+if [[ "$SELECTED_FILE" =~ ^http ]]; then
+    CLEAN_NAME=$(echo "${SELECTED_FILE##*/}" | cut -d? -f1)
+    EXT="${CLEAN_NAME##*.}"
+
+    case "$(echo "$EXT" | tr '[:upper:]' '[:lower:]')" in
+        png|jpg|jpeg)
+            echo "Valid image URL detected. Downloading..."
+            DEST="$WALL_DIR/$CLEAN_NAME"
+            if curl -L -o "$DEST" "$SELECTED_FILE"; then
+                SELECTED_FILE="$CLEAN_NAME"
+            else
+                echo "Download failed."
+                exit 1
+            fi
+            ;;
+        *)
+            echo "Error: URL does not point to a valid image extension (png, jpg, jpeg)."
+            exit 1
+            ;;
+    esac
+fi
+
 WALL="$WALL_DIR/$SELECTED_FILE"
 EXTENSION="${SELECTED_FILE##*.}"
 
