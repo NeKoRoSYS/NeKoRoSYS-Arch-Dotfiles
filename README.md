@@ -101,7 +101,7 @@ NeKoRoSYS's HyprDots focuses on simplicity and modularity.
 <br>
 
 > [!WARNING]
-> `start-dashboard.sh` creates a grid layout for a 1920x1080 display, however I also provided a 1280x720 version of the dashboard in `~/.config/hypr/windowrules.conf/`.
+> `start-dashboard.sh` creates a grid layout for a 1920x1080 display, however I also provided a 1280x720 version of the dashboard in `~/.config/hypr/windowrules.conf/`. Anyhow, if your monitor has a different resolution, my dashboard preset may not appear as intended; I recommend making your own dashboard using the same bash script.
 <br>
 
 ## Skins and Layouts
