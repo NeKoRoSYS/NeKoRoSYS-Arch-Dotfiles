@@ -15,6 +15,12 @@ Based on [mkhmtolzhas' rice](https://github.com/mkhmtolzhas/Invincible-Dots). I 
 | [📝 Notes](#notes) |
 <br>
 
+> [!CAUTION]
+> **HARDWARE SPECIFIC CONFIGURATION**
+> The "System Booting" section contains settings specifically optimized for a dual-GPU laptop (Intel 620/Nvidia 940MX). 
+> **Do not** copy the `GRUB_CMDLINE_LINUX_DEFAULT` or `mkinitcpio` modules unless you have identical hardware, as this may prevent your system from booting.
+<br>
+
 ## Dependencies
 - Auto-pause animated wallpapers via [mpvpaper-stop](https://github.com/pvtoari/mpvpaper-stop) (dependencies: cmake, cjson)
   - Used at `set-wallpaper.sh` and `check-video.sh` in `~/.config/hypr/scripts/wallpapers/` to save CPU/RAM usage.
