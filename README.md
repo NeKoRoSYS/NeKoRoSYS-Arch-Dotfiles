@@ -120,7 +120,7 @@ Mostly personal notes just in case I switch over to another PC. Do NOT copy my G
   - `sudo mkinitcpio -P`
 ### Boot Animations and Login
 - Use `plymouth` and `greetd` (`nwg-hello`)
-### Fix Boosted Mic on OBS and Discord (pipewire)
+### Fix Boosted/Noisy Mic on OBS and Discord (pipewire)
 - Install `alsa-utils` and `noise-suppression-for-voice`
   - `wpctl status`
   - `alsamixer`
