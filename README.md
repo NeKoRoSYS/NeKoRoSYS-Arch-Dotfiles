@@ -30,6 +30,10 @@ Based on [mkhmtolzhas' rice](https://github.com/mkhmtolzhas/Invincible-Dots). I 
 <br>
 
 > [!WARNING]
+> Always assume that cloning the main GitHub link directly will have you installing a **Beta** version of the dotfiles which may or may not have broken or incomplete features. Use the release tags instead (eg. 1.0, 1.2, and so on...)
+>
+> `git clone --branch <tag-name> --single-branch https://github.com/NeKoRoSYS/NeKoRoSYS-NecroDots`
+> 
 > These dotfiles still work as I am writing this on February 8, 2026. Future updates could break one or more of the packages and I may or may not be active enough to fix it for you (please do contact me on **Discord** - **@nekorosys** - and I'll be happy to entertain any of your concerns). I do recommend fixing it yourself just in case it happens because it might help you learn more about maintaining your desktop experience!
 <br>
 
