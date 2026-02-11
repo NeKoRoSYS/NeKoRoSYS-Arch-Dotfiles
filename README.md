@@ -23,14 +23,14 @@ Based on [mkhmtolzhas' rice](https://github.com/mkhmtolzhas/Invincible-Dots). I 
 > [!CAUTION]
 > **HARDWARE SPECIFIC CONFIGURATION**<br>
 >
-> Some environment variables and params at `~/.config/hypr/configs/environment.conf/` and `~/.config/hypr/scripts/set-wallpaper.conf/` (the `mpvpaper` part, also check `check-video.sh`) **require an NVIDIA graphics card**. Although it may be generally safe to leave it as is upon installing to a machine without such GPU, I recommend commenting it out or replacing it with a variable that goes according to your GPU.
+> Some environment variables and params at `~/.config/hypr/configs/environment.conf/` and `~/.config/hypr/scripts/set-wallpaper.conf/` (also check the `check-video.sh` script, `mpvpaper` uses "hwdec=nvdec") **require an NVIDIA graphics card**. Although it may be generally safe to leave it as is upon installing to a machine without such GPU, I recommend commenting it out or replacing it with a variable that goes according to your GPU.
 > 
 > The [System Booting](#system-booting) section contains settings specifically optimized for a dual-GPU laptop (Intel 620/Nvidia 940MX). 
 > **Do not** copy the `GRUB_CMDLINE_LINUX_DEFAULT` or `mkinitcpio` modules unless you have identical hardware, as this may **prevent your system from booting**.
 <br>
 
 > [!WARNING]
-> These dotfiles still work as I am writing this on February 8, 2026. Future updates could break one or more of the packages and I may or may not be active enough to fix it for you (please do contact me on **Discord** - **@nekorosys** - and I'll be happy to entertain any of your concerns). I do recommend fixing it yourself just in case it happens because it might help you learn more about maintaining your desktop experience!
+> These dotfiles still work as I am writing this on February 12, 2026. Future updates could break one or more of the packages and I may or may not be active enough to fix it for you (please do contact me on **Discord** - **@nekorosys** - and I'll be happy to entertain any of your concerns). I do recommend fixing it yourself just in case it happens because it might help you learn more about maintaining your desktop experience!
 <br>
 
 - Auto-pause animated wallpapers via [mpvpaper-stop](https://github.com/pvtoari/mpvpaper-stop) (dependencies: cmake, cjson)
