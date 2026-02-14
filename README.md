@@ -83,6 +83,7 @@ NeKoRoDOTS focuses on simplicity and modularity.
 - **Advanced Customization - Make NeKoRoDOTS YOURS!**
 <br>
 NeKoRoDOTS is not just an identity, it is a framework. This repo gives you at most 2 pre-installed out-of-the-box layouts/styling for waybar, hyprlock, and SwayNC. The best part? You can make your own!
+<br>
   - Credits to [iyiolacak](https://github.com/iyiolacak/iyiolacak-swaync-config?tab=readme-ov-file), [justinmdickey](https://github.com/justinmdickey/publicdots/blob/main/.config/hypr/hyprlock.conf), and [mkhmtolzhas](https://github.com/mkhmtolzhas/mkhmtdots) for their amazing theming.
   - Switch to Dark and Light Mode
   - Select Waybar Skins
